@@ -1,4 +1,5 @@
 
+
 <HTML>
     <head>
       <title>Create pizza</title>
@@ -9,15 +10,15 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
-  	<body>
+    <body>
       {% if error %}
         {{ error }}
           <br /><br />
       {% endif %}
-    	<form method="POST" action="{% url 'type' %}" enctype="multipart/form-data" >
-  		{% csrf_token %}
-    		<label for="pizzatype">Pizza type</label><br>
-   			<input placeholder="Pizza type" name="_pizzatype" id="_pizzatype" type="text" class="validate">
+      <form method="POST" action="{% url 'type' %}" enctype="multipart/form-data" >
+      {% csrf_token %}
+        <label for="pizzatype">Pizza type</label><br>
+        <input placeholder="Pizza type" name="_pizzatype" id="_pizzatype" type="text" class="validate">
         <br>
         <label for="pizzasize">Pizza size </label><br>
         <input placeholder="Pizza size" name="_pizzasize" id="_pizzasize" type="text" class="validate">
@@ -25,8 +26,8 @@
         <label for="pizzatopping">Pizza topping</label><br>
         <input placeholder="Pizza toping" name="_pizzatopping" id="_pizzatopping" type="text" class="validate">
         <br>
-   		<br><br>
-   		<input class="btn btn-primary blue" type="submit" value="save pizza" />	
-  		</form>
-  	</body>
+      <br><br>
+      <input class="btn btn-primary blue" type="submit" value="save pizza" /> 
+      </form>
+    </body>
 </HTML>

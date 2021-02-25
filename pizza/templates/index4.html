@@ -9,15 +9,21 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        {% for pizza in pizza.all %}
-        <div class="container">
-              <h2>Pizza</h2>
-              <div class="card">
-                <p class="card-title">{{ pizza.pizza_type}}</p>               
-                <p class="card-text">{{ pizza.pizza_size}}</p>            
-                <p class="card-text">{{ pizza.pizza_topping}}</p>
-              </div>              
-        </div>
+        {% for piz in piz.all %}
+            {% if piz.pizza_size == pizzasize%}
+              {% if piz.pizza_size == pizzasize%}
+                <div class="container">
+                      <h2>Pizza</h2>
+                      <div class="card">
+                        <p class="card-title">{{ piz.pizza_type}}</p>               
+                        <p class="card-text">{{ piz.pizza_size}}</p>      
+                        <p class="card-text">{{ piz.pizza_topping}}</p>
+                      </div>              
+                </div>
+              {% endif %} 
+            {% endif %} 
         {% endfor %}
     </body>
 </HTML>
+
+
