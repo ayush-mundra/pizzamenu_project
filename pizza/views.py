@@ -75,3 +75,18 @@ def delete(request, id):
     product.delete()
     return render(request,'index5.html')
         
+def edit(request, id):
+	_pizza = get_object_or_404(Pizza, pk=id)
+	if(request.method=="POST"):
+		if(request.POST["_pizzatype"] and request.POST["_pizzasize"] and request.POST["_pizzatopping"]):
+			_pizza.pizza_type=request.POST["_pizzatype"]
+			_pizza.pizza_size=request.POST["_pizzasize"]
+			_pizza.pizza_topping=request.POST["_pizzatopping"]
+			_pizza.owner=request.user
+			_pizza.save()
+
+			return render(request, "index8.html")
+
+		return render(request, "index7.html", {"error":"fill all the inputs", "id": id})
+
+	return render(request, "index7.html",{"id":id})
