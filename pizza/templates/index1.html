@@ -17,7 +17,7 @@
       <form method="POST" action="{% url 'type' %}" enctype="multipart/form-data" >
       {% csrf_token %}
         <label for="pizzatype">Pizza type</label><br>
-        <input placeholder="Pizza type" name="_pizzatype" id="_pizzatype" type="text" class="validate">
+        <input placeholder="'Regular'or'Square'" name="_pizzatype" id="_pizzatype" type="text" class="validate">
         <br>
         <label for="pizzasize">Pizza size </label><br>
         <input placeholder="Pizza size" name="_pizzasize" id="_pizzasize" type="text" class="validate">

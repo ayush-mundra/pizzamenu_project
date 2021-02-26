@@ -16,8 +16,8 @@
       {% endif %}
       <form method="POST" action="{% url 'edit' id %}" enctype="multipart/form-data" >
       {% csrf_token %}
-        <label for="pizzatype">Pizza type</label><br>
-        <input placeholder="Pizza type" name="_pizzatype" id="_pizzatype" type="text" class="validate">
+        <label for="pizzatype">Pizza type:choose either "Regular" or "Square"</label><br>
+        <input placeholder="'Regular'or'Square'" name="_pizzatype" id="_pizzatype" type="text" class="validate">
         <br>
         <label for="pizzasize">Pizza size </label><br>
         <input placeholder="Pizza size" name="_pizzasize" id="_pizzasize" type="text" class="validate">
