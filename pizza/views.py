@@ -40,7 +40,7 @@ from django.contrib.auth.models import User
 
 def _pizzatype(request):
 	if(request.method=="POST"):
-		if(request.POST["_pizzatype"] and request.POST["_pizzasize"] and request.POST["_pizzatopping"]):
+		if((request.POST["_pizzatype"] == "Regular" or request.POST["_pizzatype"] == "Square" ) and request.POST["_pizzasize"] and request.POST["_pizzatopping"]):
 			_pizza=Pizza()
 			_pizza.pizza_type=request.POST["_pizzatype"]
 			_pizza.pizza_size=request.POST["_pizzasize"]
@@ -50,7 +50,7 @@ def _pizzatype(request):
 
 			return render(request, "index2.html")
 
-		return render(request, "index1.html", {"error":"fill all the inputs"})
+		return render(request, "index1.html", {"error":"fill all the inputs correctly"})
 
 	return render(request, "index1.html")
 
