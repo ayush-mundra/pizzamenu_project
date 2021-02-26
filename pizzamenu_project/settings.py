@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'pizzamenu_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME':"pizzadatabse",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':"db.sqlite3",
     }
 }
 
